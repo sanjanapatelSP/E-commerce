@@ -1,0 +1,28 @@
+<table class="table">
+<thead>
+<tr>
+<th scope="col">#</th>
+<th scope="col">Product</th>
+<th scope="col">Name</th>
+<th scope="col">Price</th>
+<th scope="col">Description</th>
+
+<th scope="col">Remove Product</th>
+
+</tr>
+</thead>
+<tbody>
+<% @addcart.each_with_index do |cartitems,index| %>
+<tr>
+<th scope="row"><%=index+1%></th>
+<td><img height="100" width="70" src="https://www.reliancedigital.in/medias/Apple-iPhone-14-Pro-Mobile-Phone-493177782-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w3NDEzN3xpbWFnZS9qcGVnfGltYWdlcy9oMjIvaDRmLzk4OTA0NTA5MzE3NDIuanBnfDkyOGU4MDdkMWI3ODkwMzU1ZDhkMjJjMWM4ZTYzZWY0NTQzNTA5MmFlYmE2MDgyY2FlNDlkOTQ4YTY4YzY0NzM" class="card-img-top" alt="...">
+</td>
+<td><%= cartitems.product.name%></td>
+<td><%= cartitems.product.price%></td>
+<td><%= cartitems.product.description%></td>
+<td><%= link_to "Remove Product",removeproduct_path(cartitems),class:"nav-link active"%></td>
+
+</tr>
+<% end %>
+</tbody>
+</table>

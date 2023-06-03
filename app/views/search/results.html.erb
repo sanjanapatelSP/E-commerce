@@ -1,0 +1,11 @@
+<h1>Search Results</h1>
+<% @results.tap  do |result| %>
+  <p><%= result.name %></p>
+  <div class="card-body">
+  <h5 class="card-title"> <%= result.name%></h5>
+  <p class="card-text"><%= result.description%></p>
+  <%= link_to "AddToCart",addresult_path(result_id=result.id),class:"btn btn-primary"%>
+</div>
+<%= render @product %>
+
+<% end %>

@@ -1,0 +1,19 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Products</h1>
+
+<div id="products">
+  <% @products.each do |product| %>
+ <div class="card" style="width: 18rem;">
+  <img src="https://www.reliancedigital.in/medias/Apple-iPhone-14-Pro-Mobile-Phone-493177782-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w3NDEzN3xpbWFnZS9qcGVnfGltYWdlcy9oMjIvaDRmLzk4OTA0NTA5MzE3NDIuanBnfDkyOGU4MDdkMWI3ODkwMzU1ZDhkMjJjMWM4ZTYzZWY0NTQzNTA5MmFlYmE2MDgyY2FlNDlkOTQ4YTY4YzY0NzM" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"> <%= product.name%></h5>
+    <p class="card-text"><%= product.price%></p>
+    <p class="card-text"><%= product.description%></p>
+    <%= link_to "AddToCart",addproduct_path(product_id=product.id),class:"btn btn-primary"%>
+  </div>
+</div>
+  <% end %>
+</div>
+
+
